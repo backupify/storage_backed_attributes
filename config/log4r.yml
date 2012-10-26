@@ -1,0 +1,22 @@
+log4r_config:
+  pre_config:
+    root:
+      level: DEBUG
+  loggers:
+    - name: "rails"
+      level: DEBUG
+      outputters:
+        - logfile
+    # RedisFailover too chatty in debug mode in dev/staging
+    - name: "rails::RedisFailover"
+      level: WARN
+
+  outputters:
+    - type: FileOutputter
+      name: logfile
+      filename: "#{log_file}"
+      trunc: 'false'
+      formatter   :
+        date_pattern: '%H:%M:%S'
+        pattern     : '%-5l %d %C [#{Lumber.format_mdc}]: %M'
+        type        : PatternFormatter
