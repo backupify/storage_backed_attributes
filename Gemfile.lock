@@ -109,7 +109,7 @@ DEPENDENCIES
   exception_helper!
   factory_girl
   filter_io!
-  fog (= 1.2.0)
+  fog
   jeweler
   log4r
   mocha
