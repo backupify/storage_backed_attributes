@@ -48,12 +48,12 @@ GEM
       rake
       simple_uuid (~> 0.2.0)
       thrift_client (>= 0.7.0, < 0.9)
-    excon (0.12.0)
+    excon (0.16.7)
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
-    fog (1.2.0)
+    fog (1.6.0)
       builder
-      excon (~> 0.12.0)
+      excon (~> 0.14)
       formatador (~> 0.2.0)
       mime-types
       multi_json (~> 1.0)
