@@ -1,3 +1,5 @@
+require 'fog'
+
 module TestHelpers
   module StorageBackedTestHelper
     extend ActiveSupport::Concern

@@ -107,6 +107,7 @@ DEPENDENCIES
   bundler
   cassandra_datum!
   exception_helper!
+  excon
   factory_girl
   filter_io!
   fog

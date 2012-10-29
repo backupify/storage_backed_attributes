@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'exception_helper'
 require 'logger_helper'
+require 'excon'
 
 module S3
   class BlankBucketException < StandardError; end
