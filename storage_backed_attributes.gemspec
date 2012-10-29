@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "storage_backed_attributes"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Benvenuti"]
-  s.date = "2012-10-26"
+  s.date = "2012-10-29"
   s.description = "Allows models to add attributes which have content backed by s3.  Also provides basic s3 helper"
   s.email = "dave@backupify.com"
   s.extra_rdoc_files = [
@@ -26,14 +26,11 @@ Gem::Specification.new do |s|
     "lib/s3/s3_helper.rb",
     "lib/s3/storage_backed_attribute.rb",
     "lib/storage_backed_attributes.rb",
+    "lib/test_helpers/storage_backed_test_helper.rb",
     "storage_backed_attributes.gemspec",
     "test/factories/data.rb",
     "test/factories/services.rb",
     "test/helper.rb",
-    "test/lib/mock_cassandra_datum.rb",
-    "test/lib/service.rb",
-    "test/lib/storage_backed_datum.rb",
-    "test/lib/test_helpers/storage_backed_test_helper.rb",
     "test/unit/s3/s3_helper_test.rb",
     "test/unit/s3/storage_backed_attribute_test.rb",
     "test/unit/storage_backed_attributes_test.rb"
@@ -49,29 +46,29 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-      s.add_runtime_dependency(%q<fog>, ["= 1.2.0"])
+      s.add_runtime_dependency(%q<fog>, [">= 0"])
       s.add_runtime_dependency(%q<exception_helper>, [">= 0"])
       s.add_runtime_dependency(%q<filter_io>, [">= 0"])
-      s.add_runtime_dependency(%q<log4r>, [">= 0"])
+      s.add_runtime_dependency(%q<excon>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<activesupport>, [">= 0"])
-      s.add_dependency(%q<fog>, ["= 1.2.0"])
+      s.add_dependency(%q<fog>, [">= 0"])
       s.add_dependency(%q<exception_helper>, [">= 0"])
       s.add_dependency(%q<filter_io>, [">= 0"])
-      s.add_dependency(%q<log4r>, [">= 0"])
+      s.add_dependency(%q<excon>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<activesupport>, [">= 0"])
-    s.add_dependency(%q<fog>, ["= 1.2.0"])
+    s.add_dependency(%q<fog>, [">= 0"])
     s.add_dependency(%q<exception_helper>, [">= 0"])
     s.add_dependency(%q<filter_io>, [">= 0"])
-    s.add_dependency(%q<log4r>, [">= 0"])
+    s.add_dependency(%q<excon>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
