@@ -10,14 +10,12 @@ module StorageBackedAttributes
   extend ActiveSupport::Concern
 
   mattr_accessor :default_storage_bucket
-  mattr_accessor :aws_access_key
-  mattr_accessor :aws_secret_access_key
+  mattr_accessor :storage_endpoint_config
   mattr_accessor :logger
 
   included do
     raise "Please define a default s3 bucket via StorageBackedAttributes.default_storage_bucket=" unless StorageBackedAttributes.default_storage_bucket
-    raise "Please define an aws access key via StorageBackedAttributes.aws_access_key=" unless StorageBackedAttributes.aws_access_key
-    raise "Please define an aws secret access key via StorageBackedAttributes.aws_secret_access_key=" unless StorageBackedAttributes.aws_secret_access_key
+    raise "Please define storage endpoint configurations via StorageBackedAttributes.storage_endpoint_config=" unless StorageBackedAttributes.storage_endpoint_config
 
     # keep track of the storage backed attribute names so we know which attributes to translate below in #translate_storage_accounting_attributes
     class_attribute :storage_backed_attribute_names

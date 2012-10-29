@@ -11,8 +11,8 @@ module TestHelpers
       setup do
         # Make sure our storage bucket is created before tests start trying to write to it.
         s3 = Fog::Storage.new(:provider => 'AWS',
-                              :aws_access_key_id => StorageBackedAttributes.aws_access_key,
-                              :aws_secret_access_key => StorageBackedAttributes.aws_secret_access_key)
+                              :aws_access_key_id => '',
+                              :aws_secret_access_key => '')
         s3.put_bucket(StorageBackedAttributes.default_storage_bucket)
         s3.put_bucket_versioning(StorageBackedAttributes.default_storage_bucket, 'Enabled')
       end

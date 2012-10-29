@@ -16,8 +16,8 @@ class StorageBackedAttributesTest < ActiveSupport::TestCase
 
   should "configure storage backed attribute with non-default bucket" do
     bucket_creator = Fog::Storage.new(:provider => 'AWS',
-                          :aws_access_key_id => StorageBackedAttributes.aws_access_key,
-                          :aws_secret_access_key => StorageBackedAttributes.aws_secret_access_key)
+                          :aws_access_key_id => '',
+                          :aws_secret_access_key => '')
 
     bucket_creator.put_bucket('some-other-bucket')
 

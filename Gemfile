@@ -6,6 +6,8 @@ gem 'fog'
 gem 'exception_helper', :git => 'git@github.com:backupify/exception_helper.git'
 gem "filter_io", :git => "git://github.com/backupify/filter_io.git"
 
+gem 's3_helper', :git => "git@github.com:backupify/s3_helper.git"
+
 gem "excon"
 
 group :development do

@@ -31,14 +31,16 @@ Gem::Specification.new do |s|
     "test/factories/data.rb",
     "test/factories/services.rb",
     "test/helper.rb",
-    "test/unit/s3/s3_helper_test.rb",
+    "test/lib/mock_cassandra_datum.rb",
+    "test/lib/service.rb",
+    "test/lib/storage_backed_datum.rb",
     "test/unit/s3/storage_backed_attribute_test.rb",
     "test/unit/storage_backed_attributes_test.rb"
   ]
   s.homepage = "http://github.com/backupify/storage_backed_attributes"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.15"
+  s.rubygems_version = "1.8.23"
   s.summary = "Allows models to add attributes which have content backed by s3.  Also provides basic s3 helper"
 
   if s.respond_to? :specification_version then
@@ -49,6 +51,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<fog>, [">= 0"])
       s.add_runtime_dependency(%q<exception_helper>, [">= 0"])
       s.add_runtime_dependency(%q<filter_io>, [">= 0"])
+      s.add_runtime_dependency(%q<s3_helper>, [">= 0"])
       s.add_runtime_dependency(%q<excon>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
@@ -58,6 +61,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fog>, [">= 0"])
       s.add_dependency(%q<exception_helper>, [">= 0"])
       s.add_dependency(%q<filter_io>, [">= 0"])
+      s.add_dependency(%q<s3_helper>, [">= 0"])
       s.add_dependency(%q<excon>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
@@ -68,6 +72,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fog>, [">= 0"])
     s.add_dependency(%q<exception_helper>, [">= 0"])
     s.add_dependency(%q<filter_io>, [">= 0"])
+    s.add_dependency(%q<s3_helper>, [">= 0"])
     s.add_dependency(%q<excon>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
