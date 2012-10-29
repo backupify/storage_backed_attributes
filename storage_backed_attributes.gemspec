@@ -31,6 +31,9 @@ Gem::Specification.new do |s|
     "test/factories/data.rb",
     "test/factories/services.rb",
     "test/helper.rb",
+    "test/lib/mock_cassandra_datum.rb",
+    "test/lib/service.rb",
+    "test/lib/storage_backed_datum.rb",
     "test/unit/s3/s3_helper_test.rb",
     "test/unit/s3/storage_backed_attribute_test.rb",
     "test/unit/storage_backed_attributes_test.rb"
