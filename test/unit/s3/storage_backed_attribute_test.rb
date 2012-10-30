@@ -4,7 +4,7 @@ module S3
   class StorageBackedAttributeTest < ActiveSupport::TestCase
 
     setup do
-      @s3 = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => StorageBackedAttributes.aws_access_key, :aws_secret_access_key => StorageBackedAttributes.aws_secret_access_key)
+      @s3 = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => '', :aws_secret_access_key => '')
 
       @service = FactoryGirl.create(:service)
 

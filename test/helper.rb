@@ -22,8 +22,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'storage_backed_attributes'
 
 StorageBackedAttributes.default_storage_bucket='sba-test-bucket'
-StorageBackedAttributes.aws_access_key='access-key'
-StorageBackedAttributes.aws_secret_access_key='secret-key'
+StorageBackedAttributes.storage_endpoint_config={:host => 'localhost'}
 
 require 'cassandra_datum'
 require 'mock_cassandra_datum'
