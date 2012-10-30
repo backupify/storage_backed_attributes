@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "storage_backed_attributes"
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Benvenuti"]
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
     "VERSION",
     "config/log4r.yml",
     "lib/logger_helper.rb",
-    "lib/s3/s3_helper.rb",
     "lib/s3/storage_backed_attribute.rb",
     "lib/storage_backed_attributes.rb",
     "lib/test_helpers/storage_backed_test_helper.rb",
@@ -34,7 +33,6 @@ Gem::Specification.new do |s|
     "test/lib/mock_cassandra_datum.rb",
     "test/lib/service.rb",
     "test/lib/storage_backed_datum.rb",
-    "test/unit/s3/s3_helper_test.rb",
     "test/unit/s3/storage_backed_attribute_test.rb",
     "test/unit/storage_backed_attributes_test.rb"
   ]
@@ -52,6 +50,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<fog>, [">= 0"])
       s.add_runtime_dependency(%q<exception_helper>, [">= 0"])
       s.add_runtime_dependency(%q<filter_io>, [">= 0"])
+      s.add_runtime_dependency(%q<s3_helper>, [">= 0"])
       s.add_runtime_dependency(%q<excon>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
@@ -61,6 +60,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fog>, [">= 0"])
       s.add_dependency(%q<exception_helper>, [">= 0"])
       s.add_dependency(%q<filter_io>, [">= 0"])
+      s.add_dependency(%q<s3_helper>, [">= 0"])
       s.add_dependency(%q<excon>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
@@ -71,6 +71,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fog>, [">= 0"])
     s.add_dependency(%q<exception_helper>, [">= 0"])
     s.add_dependency(%q<filter_io>, [">= 0"])
+    s.add_dependency(%q<s3_helper>, [">= 0"])
     s.add_dependency(%q<excon>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
