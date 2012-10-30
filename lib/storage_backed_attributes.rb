@@ -15,7 +15,7 @@ module StorageBackedAttributes
 
   included do
     raise "Please define a default s3 bucket via StorageBackedAttributes.default_storage_bucket=" unless StorageBackedAttributes.default_storage_bucket
-    raise "Please define storage endpoint configurations via StorageBackedAttributes.storage_endpoint_config=" unless StorageBackedAttributes.storage_endpoint_config
+    StorageBackedAttributes.storage_endpoint_config = {} unless StorageBackedAttributes.storage_endpoint_config
 
     # keep track of the storage backed attribute names so we know which attributes to translate below in #translate_storage_accounting_attributes
     class_attribute :storage_backed_attribute_names
