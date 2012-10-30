@@ -24,7 +24,6 @@ class StorageBackedAttributesTest < ActiveSupport::TestCase
 
     @datum.content_on_other_bucket = "my content"
     @datum.save
-``
 
     bad_s3 = ::S3::S3Helper.new(StorageBackedAttributes.default_storage_bucket, StorageBackedAttributes.storage_endpoint_config)
     good_s3 = ::S3::S3Helper.new('some-other-bucket', StorageBackedAttributes.storage_endpoint_config)
