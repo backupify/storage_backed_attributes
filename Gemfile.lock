@@ -26,9 +26,9 @@ GIT
 
 GIT
   remote: git@github.com:backupify/s3_helper.git
-  revision: 402685af2d79f2c1601cb38111ce198f290cb76d
+  revision: f054328c194519031c03549f6bcfab66a7df77bf
   specs:
-    s3_helper (0.5.1)
+    s3_helper (0.5.2)
       activesupport (>= 2.3.5)
       exception_helper
       excon

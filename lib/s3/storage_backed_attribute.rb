@@ -166,7 +166,7 @@ module S3
     #
     # @return [::S3::Helper] Backupify S3 Helper
     def s3
-      @s3 ||= ::S3::S3Helper.new(storage_bucket)
+      @s3 ||= ::S3::S3Helper.new(storage_bucket, StorageBackedAttributes.storage_endpoint_config)
     end
 
     private

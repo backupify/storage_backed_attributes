@@ -26,8 +26,8 @@ class StorageBackedAttributesTest < ActiveSupport::TestCase
     @datum.save
 
 
-    bad_s3 = ::S3::S3Helper.new(StorageBackedAttributes.default_storage_bucket)
-    good_s3 = ::S3::S3Helper.new('some-other-bucket')
+    bad_s3 = ::S3::S3Helper.new(StorageBackedAttributes.default_storage_bucket, StorageBackedAttributes.storage_endpoint_config)
+    good_s3 = ::S3::S3Helper.new('some-other-bucket', StorageBackedAttributes.storage_endpoint_config)
 
     assert_blank bad_s3.fetch(@datum.service.storage_path, @datum.content_on_other_bucket_filename)
     assert_present good_s3.fetch(@datum.service.storage_path, @datum.content_on_other_bucket_filename)

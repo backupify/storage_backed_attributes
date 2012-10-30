@@ -24,7 +24,7 @@ module TestHelpers
 
     def dump_s3(bucket, prefix=nil)
       result = {}
-      s3 = S3::S3Helper.new(bucket)
+      s3 = S3::S3Helper.new(bucket, StorageBackedAttributes.storage_endpoint_config)
       s3.walk_tree(prefix) do |f|
         result[f.key] = f
       end
