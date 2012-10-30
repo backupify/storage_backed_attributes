@@ -33,6 +33,22 @@ class StorageBackedAttributesTest < ActiveSupport::TestCase
     assert_present good_s3.fetch(@datum.service.storage_path, @datum.content_on_other_bucket_filename)
   end
 
+  should "configure storage backed attribute with no connection options" do
+    bucket_creator = Fog::Storage.new(:provider => 'AWS',
+                                      :aws_access_key_id => '',
+                                      :aws_secret_access_key => '')
+
+    bucket_creator.put_bucket('some-other-bucket')
+
+
+    @datum.content_on_other_bucket = "my content"
+    @datum.save
+
+    good_s3 = ::S3::S3Helper.new('some-other-bucket')
+
+    assert_present good_s3.fetch(@datum.service.storage_path, @datum.content_on_other_bucket_filename)
+  end
+
   should "define accessor for storage backed attribute object" do
     assert_equal S3::StorageBackedAttribute, @datum.content_attribute.class
   end
