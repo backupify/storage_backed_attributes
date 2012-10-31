@@ -2,6 +2,7 @@ require 'active_support/concern'
 require 'active_support/core_ext/module'
 
 require 's3/storage_backed_attribute'
+require 's3/storage_factory'
 require 's3_helper'
 
 require 'test_helpers/storage_backed_test_helper'
