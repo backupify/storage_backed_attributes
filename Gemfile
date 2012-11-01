@@ -18,6 +18,9 @@ end
 
 group :test do
   gem "log4r"
+  gem 'ci_reporter'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
   gem "factory_girl"
   gem "shoulda"
   gem "test-unit"

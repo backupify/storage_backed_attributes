@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'bundler'
 begin
-  Bundler.setup(:default, :development)
+  Bundler.setup(:default, :development, :test)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
   $stderr.puts "Run `bundle install` to install missing gems"
@@ -27,6 +27,7 @@ end
 #Uncomment for a public gem
 #Jeweler::RubygemsDotOrgTasks.new
 
+require 'ci/reporter/rake/test_unit'
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
