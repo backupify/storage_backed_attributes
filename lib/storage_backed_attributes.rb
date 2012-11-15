@@ -122,9 +122,9 @@ module StorageBackedAttributes
 
         # define book-keeping accessors
         if respond_to?(:attribute)
-          attribute "raw_#{name}_size"                                                                                    # attribute "raw_content_size"
+          attribute "raw_#{name}_size", :type => Integer                                                                                    # attribute "raw_content_size"
           attribute "raw_#{name}_digest"                                                                                  # attribute "raw_content_digest"
-          attribute "stored_#{name}_size"                                                                                 # attribute "stored_content_size"
+          attribute "stored_#{name}_size", :type => Integer                                                                                 # attribute "stored_content_size"
           attribute "stored_#{name}_digest"                                                                               # attribute "stored_content_digest"
         end
       end
