@@ -1,3 +1,14 @@
+# enable coverage reports for jenkins only 
+if ENV['CI']
+  puts "Enabling simplecov(rcov) for jenkins"
+  require 'simplecov'
+  require 'simplecov-rcov'
+  SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+  SimpleCov.start do
+    add_filter '/test'
+  end
+end
+
 require 'rubygems'
 require 'bundler'
 require 'active_support/test_case'
@@ -9,6 +20,7 @@ rescue Bundler::BundlerError => e
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
+
 require 'test/unit'
 require 'shoulda'
 require 'factory_girl'
@@ -18,17 +30,6 @@ require 'mocha'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-
-# enable coverage reports for jenkins only 
-if ENV['CI']
-  puts "Enabling simplecov(rcov) for jenkins"
-  require 'simplecov'
-  require 'simplecov-rcov'
-  SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-  SimpleCov.start do
-    add_filter "/test/"
-  end
-end
 
 require 'storage_backed_attributes'
 
