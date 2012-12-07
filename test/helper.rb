@@ -25,7 +25,9 @@ if ENV['CI']
   require 'simplecov'
   require 'simplecov-rcov'
   SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-  SimpleCov.start
+  SimpleCov.start do
+    add_filter "/test/"
+  end
 end
 
 require 'storage_backed_attributes'
