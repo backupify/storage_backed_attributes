@@ -164,9 +164,11 @@ module S3
     
     # gets the authenticated url for a storage backed attribute
     #
+    # @oarams [String] filename the filename to get the direct link for
+    # @params [Hash] opts options to control authenticated url thats generated. Valid options are [:expires, :expires_in]
     # @return [String] url for the attribute
-    def direct_url(filename)
-      s3.authenticated_url(service.storage_path, filename) 
+    def direct_url(filename, opts = {})
+      s3.authenticated_url(service.storage_path, filename, opts) 
     end
 
     # get an s3 helper

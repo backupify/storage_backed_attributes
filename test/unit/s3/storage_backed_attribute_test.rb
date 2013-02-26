@@ -81,6 +81,21 @@ module S3
         expected_url = @s3_helper.authenticated_url(@storage_backed_attribute.service.storage_path, @filename) 
         assert_equal expected_url, @storage_backed_attribute.direct_url(@filename)
       end
+
+      should 'set the expires_in time' do  
+        opts = {:expires_in => 10.minutes}
+        expected_url = @s3_helper.authenticated_url(@storage_backed_attribute.service.storage_path, @filename, opts) 
+        bad_url = @s3_helper.authenticated_url(@storage_backed_attribute.service.storage_path, @filename) 
+        
+        assert_equal expected_url, @storage_backed_attribute.direct_url(@filename, opts)
+        assert_not_equal bad_url, @storage_backed_attribute.direct_url(@filename, opts)
+      end
+      
+      should 'set the expires time' do  
+        opts = {:expires => Time.now}
+        expected_url = @s3_helper.authenticated_url(@storage_backed_attribute.service.storage_path, @filename, opts) 
+        assert_equal expected_url, @storage_backed_attribute.direct_url(@filename, opts)
+      end
     end
 
     context 'write_content_to_s3' do
