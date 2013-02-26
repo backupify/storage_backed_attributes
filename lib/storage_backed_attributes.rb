@@ -95,6 +95,10 @@ module StorageBackedAttributes
             self.send("#{name}_attribute").content(self.send("#{name}_filename"), &block)                               #       content_attribute.content(content_filename, &block)
           end                                                                                                           #   end
         end                                                                                                             # end
+        
+        define_method "#{name}_direct_url" do
+          self.send("#{name}_attribute").direct_url(self.send("#{name}_filename"))
+        end
 
         # setter for the attribute
         define_method "#{name}=" do |val|                                                                               # def content=(val)

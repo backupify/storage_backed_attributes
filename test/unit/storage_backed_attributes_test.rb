@@ -59,6 +59,16 @@ class StorageBackedAttributesTest < ActiveSupport::TestCase
 
     assert @datum.content_changed?
   end
+  
+  context 'direct url' do
+    setup do 
+      @s3_helper = ::S3::S3Helper.new('some-other-bucket', StorageBackedAttributes.storage_endpoint_config)
+    end
+
+    should 'return the authenticated url for a storage backed attribute' do
+      assert_equal @datum.content_attribute.direct_url(@datum.content_filename), @datum.content_direct_url
+    end
+  end
 
   should "define a save_content function to save to s3" do
     assert @datum.respond_to?(:save_content)
