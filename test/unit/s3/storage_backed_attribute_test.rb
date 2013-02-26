@@ -71,6 +71,17 @@ module S3
         assert_equal 128, @storage_backed_attribute.raw_content_size
       end
     end
+    
+    context 'direct url' do
+      setup do
+        @s3_helper = ::S3::S3Helper.new(@storage_backed_attribute.storage_bucket, StorageBackedAttributes.storage_endpoint_config)
+      end
+      
+      should 'return the authenticated url for a storage backed attribute' do
+        expected_url = @s3_helper.authenticated_url(@storage_backed_attribute.service.storage_path, @filename) 
+        assert_equal expected_url, @storage_backed_attribute.direct_url(@filename)
+      end
+    end
 
     context 'write_content_to_s3' do
 
@@ -103,7 +114,7 @@ module S3
           assert_equal sha.hexdigest(file.body), @storage_backed_attribute.stored_content_digest
         end
       end
-
+      
       context 'when the content is already stored' do
         context 'when the raw content digest is present' do
           context 'and match' do

@@ -161,6 +161,13 @@ module S3
 
       @content_changed = false
     end
+    
+    # gets the authenticated url for a storage backed attribute
+    #
+    # @return [String] url for the attribute
+    def direct_url(filename)
+      s3.authenticated_url(service.storage_path, filename) 
+    end
 
     # get an s3 helper
     #
