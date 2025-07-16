@@ -13,7 +13,7 @@ gem "excon"
 group :development do
   gem "rdoc"
   gem "bundler"
-  gem "jeweler"
+  gem "jeweler", ">= 1.8.5"
 end
 
 group :test do
@@ -21,11 +21,11 @@ group :test do
   gem 'ci_reporter'
   gem 'simplecov'
   gem 'simplecov-rcov'
-  gem "factory_girl"
-  gem "shoulda"
+  gem "factory_girl", ">= 4.2.0"
+  gem "shoulda", ">= 3.2.0"
   gem "test-unit"
   gem "cassandra_datum", :git => 'git@github.com:backupify/cassandra_datum.git'
-  gem "active_attr"
+  gem "active_attr", ">= 0.15.1"
   gem "activerecord"
   gem "mocha"
 end
