@@ -26,6 +26,6 @@ group :test do
   gem "test-unit"
   gem "cassandra_datum", :git => 'git@github.com:backupify/cassandra_datum.git'
   gem "active_attr"
-  gem "activerecord"
+  gem "activerecord", ">= 7.1.5.2"
   gem "mocha"
 end
